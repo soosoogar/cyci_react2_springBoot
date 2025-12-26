@@ -6,7 +6,6 @@ import kr.soft.shopping.dto.CalcDTO;
 import kr.soft.shopping.dto.DataDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.service.annotation.HttpExchange;
 
 @RestController
 @Slf4j

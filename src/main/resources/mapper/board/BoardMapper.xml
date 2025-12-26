@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC  "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.shopping.mapper.BoardMapper">
+    <select id="list" resultType="BoardListDTO">
+        select
+            board_idx,
+            user_id,
+            title,
+            create_at
+        from cyci_board;
+    </select>
+
+    <insert id="register" parameterType="BoardRegisterDTO">
+        insert into cyci_board (user_id,title,content,create_at) values
+        (#{userId},#{title},#{content}, SYSDATE())
+    </insert>
+</mapper>

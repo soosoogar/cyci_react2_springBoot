@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC  "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.shopping.mapper.AuthMapper">
+    <insert id="regist" parameterType="MemberAuthDTO">
+        insert into cyci_auth(user_idx,auth_name,create_at)
+        values(#{userIdx},#{authName},SYSDATE())
+    </insert>
+
+    <select id="searchKey" parameterType="String" resultType="MemberAuthDTO">
+        select user_idx,auth_name
+        from cyci_auth
+        where auth_name = #{authName}
+    </select>
+</mapper>
